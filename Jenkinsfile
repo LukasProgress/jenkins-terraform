@@ -9,14 +9,14 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Validate') {
-            steps {
-                sh 'terraform validate'
-            }
-        }
         stage('Initialize') {
             steps {
                 sh 'terraform init'
+            }
+        }
+        stage('Validate') {
+            steps {
+                sh 'terraform validate'
             }
         }
         stage('Apply') {
