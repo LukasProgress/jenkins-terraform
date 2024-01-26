@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = var.bucketname
+    bucket         = "jenkins-bucket-lukas-26-01"
     key            = "state/terraform.tfstate"
-    region         = var.region
-    dynamodb_table = var.dynamodb_table_name
+    region         = "eu-central-1"
+    dynamodb_table = "dynamodb-terraform-lock"
     encrypt        = true
   }
 }
